@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar Demo with Languages</title>
+  <link rel="stylesheet" href="../src/calendar.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: rgb(189, 212, 233);
+    }
+  </style>
+</head>
+<body>
+  <h1>📅 Calendar Demo (EN + HU)</h1>
+
+  <h2>English</h2>
+  <div id="calendar-en"></div>
+
+  <h2>Hungarian</h2>
+  <div id="calendar-hu"></div>
+
+  <script src="../src/calendar.js"></script>
+  <script>
+    new Calendar("#calendar-en", {
+      mode: "day",
+      lang: "en",
+      lockedDates: ["2025-08-22"],
+      timeSlots: ["09:00 - 12:00", "13:00 - 16:00"],
+      startWeekOnMonday: false,
+      onSelect: (sel) => console.log("EN picked:", sel)
+    });
+
+    new Calendar("#calendar-hu", {
+      mode: "time",
+      lang: "hu",
+      lockedDates: ["2025-08-22"],
+      lockedTimes: {
+        "2025-08-27": ["09:00", "10:00", "18:00"],
+      },
+      startTime: "07:00",
+      endTime: "18:20",
+      bookTimePeriod: 40,
+      lockedDay: [6, 0],
+      lockedDayPeriod: [1, 3], // 1st and 3rd week of the month
+      onSelect: (sel) => console.log("HU picked:", sel)
+    });
+  </script>
+</body>
+</html>

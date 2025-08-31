@@ -1,0 +1,124 @@
+.calendar-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.calendar-box {
+  border-radius: 15px;
+  background-color: white;
+  padding: 1rem;
+  min-height: 19rem;
+  max-height: 19rem;
+}
+
+.calendar-header {
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #adadad; /* 🔹 this is the line */
+}
+
+.calendar-header button {
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.calendar-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-weight: bold;
+  padding: 4px 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-cell {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.calendar-cell:hover {
+  background: #eee;
+}
+
+.calendar-cell.locked {
+  background: #cac8c8;
+  color: #818080;
+  pointer-events: none;
+}
+
+.calendar-cell.empty {
+  border: none;
+  cursor: default;
+}
+
+.calendar-times {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 18rem;
+  border-radius: 15px;
+  border: 2px solid #adadad; /* 🔹 this is the line */
+  background: rgb(228, 228, 228);
+}
+
+.calendar-times h3 {
+  margin-top: 0;
+}
+
+.calendar-times button {
+  display: inline-block;
+  margin: 0.3rem 0.5rem;
+  padding: 8px;
+  width: 8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🔹 Selected date */
+.calendar-cell.selected {
+  background: #05a53b;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+/* 🔹 Locked time slots */
+.calendar-times button.locked-time {
+  background: #cac8c8;
+  color: #818080;
+  border-color: black;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.calendar-times button:hover {
+  background: #dddcdc;
+}
+
+.calendar-times button.selected-time {
+  background-color: #05a53b; /* green */
+  color: white;
+  font-weight: bold;
+}
+
