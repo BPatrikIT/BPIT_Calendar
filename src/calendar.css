@@ -4,28 +4,31 @@
 }
 
 .calendar-box {
-  border-radius: 15px;
-  background-color: white;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08); /* more transparent */
+  backdrop-filter: blur(15px) saturate(150%);
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
   padding: 1rem;
   min-height: 19rem;
   max-height: 19rem;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* frosted edge */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* soft depth */
 }
 
 .calendar-header {
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 5px;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #adadad; /* 🔹 this is the line */
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* lighter frosted line */
 }
 
 .calendar-header button {
   border: none;
-  background-color: #ffffff;
+  background-color: transparent;
   cursor: pointer;
   padding-left: 1rem;
   padding-right: 1rem;
+  color: black;
 }
 
 .calendar-title {
@@ -55,10 +58,14 @@
   text-align: center;
   cursor: pointer;
   border-radius: 20px;
+  transition: all 0.3s ease; /* smoother hover */
 }
 
 .calendar-cell:hover {
-  background: #eee;
+  background: rgba(183, 110, 121, 0.9);
+  box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
+  transform: translateY(-2px); /* modern hover lift */
+  color: white;
 }
 
 .calendar-cell.locked {
@@ -73,13 +80,15 @@
 }
 
 .calendar-times {
-  border: 1px solid #ccc;
   padding: 1rem;
-  border-radius: 6px;
   width: 18rem;
-  border-radius: 15px;
-  border: 2px solid #adadad; /* 🔹 this is the line */
-  background: rgb(228, 228, 228);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  color: black;
 }
 
 .calendar-times h3 {
@@ -87,17 +96,21 @@
 }
 
 .calendar-times button {
-  display: inline-block;
   margin: 0.3rem 0.5rem;
   padding: 8px;
-  width: 8rem;
-  border-radius: 6px;
-  cursor: pointer;
+  width: 5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  transition: all 0.3s ease; /* smoother hover */
+  color: black !important;
 }
 
 /* 🔹 Selected date */
 .calendar-cell.selected {
-  background: #05a53b;
+  background: rgb(183, 110, 121);
   color: white;
   font-weight: bold;
   border-radius: 20px;
@@ -113,12 +126,15 @@
 }
 
 .calendar-times button:hover {
-  background: #dddcdc;
+  background: rgba(183, 110, 121, 0.9);
+  box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
+  transform: translateY(-2px); /* modern hover lift */
+  color: white !important;
 }
 
 .calendar-times button.selected-time {
-  background-color: #05a53b; /* green */
-  color: white;
+  background-color: rgb(183, 110, 121); /* green */
+  color: white !important;
   font-weight: bold;
 }
 
